@@ -1,6 +1,6 @@
 Name:		texlive-na-box
 Version:	45130
-Release:	1
+Release:	2
 Summary:	Arabic-aware version of pas-cours package
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/na-box
