@@ -3,7 +3,7 @@ Version:	45130
 Release:	2
 Summary:	Arabic-aware version of pas-cours package
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/na-box
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/na-box
 License:	lppl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/na-box.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/na-box.doc.r%{version}.tar.xz
