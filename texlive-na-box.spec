@@ -1,37 +1,22 @@
-Name:		texlive-na-box
-Version:	45130
-Release:	2
+%global tl_name na-box
+%global tl_revision 45130
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	Arabic-aware version of pas-cours package
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/na-box
+URL:		https://www.ctan.org/tex-archive/macros/xetex/latex/na-box
 License:	lppl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/na-box.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/na-box.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/na-box.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/na-box.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This is a modified version of the pas-cours package made
-compatible with XeLaTeX/polyglossia to write arabic documents
-with fancy boxed theorem-alike environments.
+This is a modified version of the pas-cours package made compatible with
+XeLaTeX/polyglossia to write arabic documents with fancy boxed theorem-
+alike environments.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/xelatex/na-box
-%doc %{_texmfdistdir}/doc/xelatex/na-box
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
